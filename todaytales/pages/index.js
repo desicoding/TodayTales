@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          <code className={styles.code}>The World's most fun site.</code>
+          <code className={styles.code}>The World{`'`}s most fun site.</code>
         </p>
 
         <div className={styles.grid}>
