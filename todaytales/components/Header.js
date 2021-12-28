@@ -30,12 +30,14 @@ export default function Header(){
         borderRadius: '4px',
         }}>
         <div className='grid'>
-          <div className='innerGrid' style={{flex:'33%'}}>
+          <div className='innerGrid' style={{flex:'30%'}}>
             <Image alt='Tales Today Banner Image' src={`/headingText.png`} width="154" height="40"/>
           </div>
-          <div className='innerGrid' style={{flex:'66%'}}>
+          <div className='innerGrid' style={{flex:'40%'}}>
             <div className='gridItem'><Link href='/'><a className={isSelected('/')?'selected':''}>Stories</a></Link></div>
             <div className='gridItem'><Link href='/memes'><a className={isSelected('/memes')?'selected':''}>Memes</a></Link></div>
+          </div>
+          <div style={{flex:'30%'}}>
           </div>
         </div>
       </header>
