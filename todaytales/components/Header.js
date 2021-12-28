@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import {COLORS} from '../utils/Constants'
 import Link from 'next/link'
 
@@ -24,16 +25,15 @@ export default function Header(){
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        borderBottom: `1px solid ${COLORS.headerAccentColor}`,
+        justifyContent: 'stretch',
+        borderBottom: `1px solid ${COLORS.headerColor}`,
         borderRadius: '4px',
-        position: 'fixed',
-        top: '0px',
-        right: '0px',
-        left: '0px'
         }}>
         <div className='grid'>
-          <div className='innerGrid'>
+          <div className='innerGrid' style={{flex:'33%'}}>
+            <Image alt='Tales Today Banner Image' src={`/headingText.png`} width="154" height="40"/>
+          </div>
+          <div className='innerGrid' style={{flex:'66%'}}>
             <div className='gridItem'><Link href='/'><a className={isSelected('/')?'selected':''}>Stories</a></Link></div>
             <div className='gridItem'><Link href='/memes'><a className={isSelected('/memes')?'selected':''}>Memes</a></Link></div>
           </div>
@@ -45,7 +45,7 @@ export default function Header(){
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 0 8px;
+            width: 100%;
           }
 
           .innerGrid {

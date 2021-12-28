@@ -1,7 +1,8 @@
 export const BASE_URL = process.env.NEXT_PUBLIC_REACT_APP_BASE_URL
 
-var primary='#2e7d32'//green  
-var secondary= '#a6685b'//brass 
+var primary='#ffff00'//green  
+var primaryVariant='#ffff00'
+var secondary= '#2979ff'//blue  1565c0
 var background= '#efefef'//light grey
 var sWhite= '#ffffff'
 var sBlack= '#000000'
@@ -12,13 +13,14 @@ export const COLORS = {
   background,
   sWhite,
   sBlack,
+  primaryVariant,
   //misc
   textDark:sBlack,
   circularProgressColor: primary,
   //header
-  headerColor: sWhite,
-  headerAccentColor: primary,
-  headerTextColor: primary,
+  headerColor: primary,
+  headerAccentColor: secondary,
+  headerTextColor: secondary,
   //booking boxes
   bookingBoxDefault: sWhite,//white
   bookingBoxtextLight: sWhite,//white

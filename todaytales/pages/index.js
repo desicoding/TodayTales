@@ -1,9 +1,21 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Header from '../components/Header'
+import StoryList from '../components/StoryList'
 import {COLORS} from '../utils/Constants'
 
 export default function Home() {
+  var dummyTopStories = [
+    {
+      id:1,
+      title: 'Leopard spotted in Lucknow, scares the shit out of nawabs',
+      image_main: 'Leopard.jpg'
+    },
+    {
+      id: 2,
+      title: '"Dekh Dekh Dekh tu yahan wahan na fenk" Netizens spotted dancing to this "garbage tune"',
+      image_main: 'dustbin.jpg'
+    }
+  ]
   return (
     <div>
       <Head>
@@ -14,12 +26,8 @@ export default function Home() {
       <Header/>
 
       <main className='main'>
-        <div className='grid'>
-          <a href="https://nextjs.org/docs" className='card'>
-            <h2>Story 1 &rarr;</h2>
-            <p>Lorem ipsum chicksum gleesum.</p>
-          </a>
-        </div>
+        <StoryList stories={dummyTopStories} variant='big'/>
+        <StoryList stories={dummyTopStories} variant='small'/>
       </main>
 
       <footer className='footer'>
@@ -32,15 +40,16 @@ export default function Home() {
             padding: 2rem 0;
             flex: 1;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
-            align-items: center;
+            align-items: start;
+            flex-wrap: wrap;
           }
           
           .footer {
             display: flex;
             padding: 1rem 0;
-            border-top: 1px solid ${COLORS.primary};
+            border-top: 1px solid ${COLORS.secondary};
             justify-content: center;
             align-items: center;
           }
@@ -49,44 +58,6 @@ export default function Home() {
             margin: 4rem 0;
             line-height: 1.5;
             font-size: 1.5rem;
-          }
-          
-          .grid {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 800px;
-          }
-          
-          .card {
-            margin: 1rem;
-            padding: 1.5rem;
-            text-align: left;
-            color: inherit;
-            text-decoration: none;
-            border: 1px solid #eaeaea;
-            border-radius: 4px;
-            transition: color 0.15s ease, border-color 0.15s ease;
-            max-width: 300px;
-          }
-          
-          .card:hover,
-          .card:focus,
-          .card:active {
-            color: ${COLORS.primary};
-            border-color: ${COLORS.primary};
-          }
-          
-          .card h2 {
-            margin: 0 0 1rem 0;
-            font-size: 1.5rem;
-          }
-          
-          .card p {
-            margin: 0;
-            font-size: 1.25rem;
-            line-height: 1.5;
           }
           
           .logo {
