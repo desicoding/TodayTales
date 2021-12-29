@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Header from '../../components/Header'
 import StoryList from '../../components/StoryList'
 import {COLORS} from '../../utils/Constants'
@@ -25,7 +26,12 @@ export default function StoryPage({ post, morePosts, preview }) {
       <Header/>
 
       <main className='main'>
-        <PostBody content={post?.content} />
+        <div className="mainStory">
+          <Image alt={post?.title} src={post?.coverImage.responsiveImage.src} width='640px' height='300px'/>
+            <h1>{post?.title}</h1>
+          <PostBody content={post?.content} />
+          <div></div>
+        </div>
         <StoryList stories={dummyTopStories} variant='small'/>
       </main>
 
@@ -34,6 +40,14 @@ export default function StoryPage({ post, morePosts, preview }) {
       </footer>
       <style jsx>
         {`
+
+          .mainStory {
+            display: flex;
+            flex-direction: column;
+            max-width: 660px;
+            overflow: hidden;
+          }
+
           .main {
             min-height: 100vh;
             padding: 2rem 0;

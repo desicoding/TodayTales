@@ -21,7 +21,7 @@ export default function StoryCardBig(props){
         <Link href={studioPageLink}>
           <a>
             <div style={{overflow:"hidden"}}>
-            <Image alt={story.title} src={props.story.coverImage.responsiveImage.src} width='640px' height='300px'/>
+            <Image alt={story.title} src={story.coverImage.responsiveImage.src} width='640px' height='300px'/>
             </div>
             <div className="Contents">
               <h3>{story.title}</h3>
