@@ -78,7 +78,7 @@ export async function getAllPostsForHome(preview) {
         excerpt
         date
         coverImage {
-          responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 480 }) {
+          responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
             ...responsiveImageFragment
           }
         }
@@ -105,10 +105,10 @@ export async function getPostAndMorePosts(slug, preview) {
       content
       date
       ogImage: coverImage{
-        url(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 })
+        url(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 })
       }
       coverImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
           ...responsiveImageFragment
         }
       }

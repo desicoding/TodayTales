@@ -3,10 +3,13 @@ import Header from '../../components/Header'
 import StoryList from '../../components/StoryList'
 import {COLORS} from '../../utils/Constants'
 import { dummyTopStories } from '../../utils/Stories'
+import PostBody from '../../components/post-body'
+import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import { markdownToHtml } from '../../lib/markdownToHtml'
 
-export default function StoryPage(props) {
+export default function StoryPage({ post, morePosts, preview }) {
 
-  console.log("story is",props)
+  console.log("story is",post)
   
   const makeStory=()=>{
     return 'ok'
@@ -22,6 +25,7 @@ export default function StoryPage(props) {
       <Header/>
 
       <main className='main'>
+        <PostBody content={post.content} />
         <StoryList stories={dummyTopStories} variant='small'/>
       </main>
 
@@ -72,31 +76,29 @@ export default function StoryPage(props) {
   )
 }
 
+export async function getStaticProps({ params, preview = false }) {
+  console.log("Storypage params",params)
+  const data = await getPostAndMorePosts(params.uniq, preview)
+  //console.log("Storypage data",data)
+  const content = await markdownToHtml(data?.post?.content || '')
+  //console.log("Storypage content",content)
 
-export async function getStaticPaths() {
-  var paths=[]
-
-  //console.log("paths are",paths)
   return {
-    paths: paths,
-    fallback: true
+    props: {
+      preview,
+      post: {
+        ...data?.post,
+        content,
+      },
+      morePosts: data?.morePosts ?? [],
+    },
   }
 }
 
-
-
-export async function getStaticProps({params}) {
-  var data={}
-
-  //console.log('data is',data)
-
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-
+export async function getStaticPaths() {
+  const allPosts = await getAllPostsWithSlug()
   return {
-    props: {story: data}, // will be passed to the page component as props
+    paths: allPosts?.map((post) => `/story/${post.slug}`) || [],
+    fallback: true,
   }
 }
