@@ -94,8 +94,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
   var data={}
 
-  data=dummyTopStories.find((story)=>story.title.replaceAll(' ','-')===params.uniq)
-
   //console.log('data is',data)
 
   if (!data) {
