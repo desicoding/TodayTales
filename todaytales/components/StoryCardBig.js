@@ -4,15 +4,15 @@ import Link from 'next/link'
 import { COLORS } from '../utils/Constants'
 
 export default function StoryCardBig(props){
-  console.log(props)
 
+  console.log("props of storycardbig",props)
   const [story] = React.useState(props.story)
 
   const [isTryingToLearn, setIsTryingToLearn]=React.useState(false)
   const [studioPageLink,setStudioPageLink]=React.useState(`/`)
 
   const tryingToLearn=()=>{
-    setIsTryingToLearn(true)
+    setIsTryingToLearn(true)//`/photos/${story.image_main}`
   }
 
   return (
@@ -21,7 +21,7 @@ export default function StoryCardBig(props){
         <Link href={studioPageLink}>
           <a>
             <div style={{overflow:"hidden"}}>
-              <Image alt={story.title} src={`/photos/${story.image_main}`} width='640px' height='480px'/>
+              <Image alt={story.title} src={props.story.coverImage.responsiveImage.src} width='640px' height='300px'/>
             </div>
             <div className="Contents">
               <h3>{story.title}</h3>
@@ -45,7 +45,7 @@ export default function StoryCardBig(props){
         .SimpleCard:hover,
         .SimpleCard:focus,
         .SimpleCard:active {
-          color: ${COLORS.secondary};
+          color: ${COLORS.primary};
           border-color: ${COLORS.sBlack};
         }
 

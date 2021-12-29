@@ -1,8 +1,8 @@
 export const BASE_URL = process.env.NEXT_PUBLIC_REACT_APP_BASE_URL
 
-var primary='#ffff00'//green  
+var primary='#26c6da'//green  
 var primaryVariant='#ffff00'
-var secondary= '#2979ff'//blue  1565c0
+var secondary= '#ffffff'//blue  1565c0
 var background= '#efefef'//light grey
 var sWhite= '#ffffff'
 var sBlack= '#000000'

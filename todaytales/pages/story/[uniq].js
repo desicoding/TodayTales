@@ -1,23 +1,26 @@
 import Head from 'next/head'
-import Header from '../components/Header'
-import StoryList from '../components/StoryList'
-import {COLORS} from '../utils/Constants'
-import { dummyTopStories } from '../utils/Stories'
-import { getAllPostsForHome } from '../lib/api'
+import Header from '../../components/Header'
+import StoryList from '../../components/StoryList'
+import {COLORS} from '../../utils/Constants'
+import { dummyTopStories } from '../../utils/Stories'
 
-export default function Home(props) {
-  console.log(props)
+export default function StoryPage({story}) {
+  
+  const makeStory=()=>{
+    return 
+  }
+
   return (
     <div>
       <Head>
-        <title>TalesToday</title>
-        <meta name="description" content="Tales Today is the place to be for all the entertainment gossip and fun stories" />
+        <title>{story.title}</title>
+        <meta name="description" content={story.title} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header/>
 
       <main className='main'>
-        <StoryList stories={props} variant='big'/>
+        {makeStory(story.story)}
         <StoryList stories={dummyTopStories} variant='small'/>
       </main>
 
@@ -68,9 +71,37 @@ export default function Home(props) {
   )
 }
 
-export async function getStaticProps({ preview = false }) {
-  const allPosts = (await getAllPostsForHome(preview)) || []
+
+export async function getStaticPaths() {
+  var paths=[]
+
+  dummyTopStories.forEach((story) => {//iterating through data
+    paths.push({params: {uniq: story.title.replaceAll(' ','-')}})//insert the paths rn
+  });
+
+  console.log("paths are",paths)
   return {
-    props: { allPosts },
+    paths: paths,
+    fallback: true
+  }
+}
+
+
+
+export async function getStaticProps({params}) {
+  var data={}
+
+  data=dummyTopStories.find((story)=>story.title.replaceAll(' ','-')===params.uniq)
+
+  console.log('data is',data)
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: {story: data}, // will be passed to the page component as props
   }
 }

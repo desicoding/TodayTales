@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { COLORS } from '../utils/Constants'
 
 export default function StoryCardSmall(props){
-  console.log(props)
+  //console.log(props)
 
   const [story] = React.useState(props.story)
 
@@ -51,7 +51,7 @@ export default function StoryCardSmall(props){
         .SimpleCard:hover,
         .SimpleCard:focus,
         .SimpleCard:active {
-          color: ${COLORS.secondary};
+          color: ${COLORS.primary};
           border-color: ${COLORS.secondary};
         }
 
