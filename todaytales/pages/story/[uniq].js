@@ -25,7 +25,7 @@ export default function StoryPage({ post, morePosts, preview }) {
       <Header/>
 
       <main className='main'>
-        <PostBody content={post.content} />
+        <PostBody content={post?.content} />
         <StoryList stories={dummyTopStories} variant='small'/>
       </main>
 
