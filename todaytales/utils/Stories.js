@@ -1,20 +1,5 @@
 export const dummyTopStories = [
   {
-    id:1,
-    title: '8 Movies That Prove Dhanush Is A Genius Who Can Make Any Role His Own',
-    image_main: '0a41e44c-a30d-458c-b589-421f6dd26e69.jpg.webp',
-    story:[`Atrangi Re hit the screens this weekend and we were predictably floored by Dhanush's performance. 
-    The film marked his homecoming, as the actor mentioned in Koffee with Karan, and what a comeback it was. 
-    However, the actor, often viewed as one of the best in the Indian film industry, has hardly ever missed the mark. 
-    Here's a look back at the films wherein Dhanush proved his acting prowess.`,
-    `**1. Asuran**|
-
-    The socio-political film by Vetri Maaran could easily be counted as one of the best projects Dhanush has been part of. 
-    He slips into a deglamorized avatar to bring forth Sivasamy, a doting father and a saviour of the oppressed. 
-    The actor delivers a performance as powerful as the script. And bagged several awards, 
-    including the National Award for Best Actor for the film.`]
-  },
-  {
     id:2,
     title: '6 Sensitive & Crucial Topics Bollywood Shouldn\'t Have Touched In 2021',
     image_main: 'ce27e910-ded4-4607-bc3d-07047e4d1475.jpg.webp'

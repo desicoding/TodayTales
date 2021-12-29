@@ -5,7 +5,7 @@ import { COLORS } from '../utils/Constants'
 
 export default function StoryCardBig(props){
 
-  console.log("props of storycardbig",props)
+  //console.log("props of storycardbig",props)
   const [story] = React.useState(props.story)
 
   const [isTryingToLearn, setIsTryingToLearn]=React.useState(false)

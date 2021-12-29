@@ -4,23 +4,24 @@ import StoryList from '../../components/StoryList'
 import {COLORS} from '../../utils/Constants'
 import { dummyTopStories } from '../../utils/Stories'
 
-export default function StoryPage({story}) {
+export default function StoryPage(props) {
+
+  console.log("story is",props)
   
   const makeStory=()=>{
-    return 
+    return 'ok'
   }
 
   return (
     <div>
       <Head>
-        <title>{story.title}</title>
-        <meta name="description" content={story.title} />
+        <title>Chacha</title>
+        <meta name="description" content='Chacha' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header/>
 
       <main className='main'>
-        {makeStory(story.story)}
         <StoryList stories={dummyTopStories} variant='small'/>
       </main>
 
@@ -75,11 +76,13 @@ export default function StoryPage({story}) {
 export async function getStaticPaths() {
   var paths=[]
 
+  console.log(dummyTopStories)
+
   dummyTopStories.forEach((story) => {//iterating through data
     paths.push({params: {uniq: story.title.replaceAll(' ','-')}})//insert the paths rn
   });
 
-  console.log("paths are",paths)
+  //console.log("paths are",paths)
   return {
     paths: paths,
     fallback: true
@@ -93,7 +96,7 @@ export async function getStaticProps({params}) {
 
   data=dummyTopStories.find((story)=>story.title.replaceAll(' ','-')===params.uniq)
 
-  console.log('data is',data)
+  //console.log('data is',data)
 
   if (!data) {
     return {
