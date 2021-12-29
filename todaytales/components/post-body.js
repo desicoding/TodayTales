@@ -1,9 +1,9 @@
 export default function PostBody({ content }) {
-  //console.log(content?.replaceAll('&#x3C;','<').replaceAll('<code>',''))
+  console.log(content?.replace(/&#x3C;/g,'<').replace(/<code>/g,''))
   return (
     <div>
       <div
-        dangerouslySetInnerHTML={{ __html: content?.replaceAll('&#x3C;','<').replaceAll('<code>','') }}
+        dangerouslySetInnerHTML={{ __html: content?.replace(/&#x3C;/g,'<').replace(/<code>/g,'')}}
       />
     </div>
   )
