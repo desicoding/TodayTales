@@ -76,12 +76,6 @@ export default function StoryPage(props) {
 export async function getStaticPaths() {
   var paths=[]
 
-  console.log(dummyTopStories)
-
-  dummyTopStories.forEach((story) => {//iterating through data
-    paths.push({params: {uniq: story.title.replaceAll(' ','-')}})//insert the paths rn
-  });
-
   //console.log("paths are",paths)
   return {
     paths: paths,
