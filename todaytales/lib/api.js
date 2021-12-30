@@ -74,6 +74,7 @@ export async function getAllPostsForHome(preview) {
     {
       allPosts(orderBy: date_DESC, first: 20) {
         title
+        category
         slug
         excerpt
         date
@@ -101,9 +102,11 @@ export async function getPostAndMorePosts(slug, preview) {
   query PostBySlug($slug: String) {
     post(filter: {slug: {eq: $slug}}) {
       title
+      category
       slug
       content
       date
+      tags
       coverImage {
         responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
           ...responsiveImageFragment
@@ -116,11 +119,12 @@ export async function getPostAndMorePosts(slug, preview) {
 
     morePosts: allPosts(orderBy: date_DESC, first: 2, filter: {slug: {neq: $slug}}) {
       title
+      category
       slug
       excerpt
       date
       coverImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
           ...responsiveImageFragment
         }
       }

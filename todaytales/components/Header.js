@@ -31,7 +31,7 @@ export default function Header(){
         }}>
         <div className='grid'>
           <div className='innerGrid' style={{flex:'30%'}}>
-            <Image alt='Tales Today Banner Image' src={`/headingText.png`} width="154" height="40"/>
+            <Image alt='Tales Today Banner Image' src={`/headingText2.png`} width="154" height="40"/>
           </div>
           <div className='innerGrid' style={{flex:'40%'}}>
             <div className='gridItem'><Link href='/'><a className={isSelected('/')?'selected':''}>Stories</a></Link></div>

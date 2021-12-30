@@ -25,7 +25,11 @@ export default function StoryCardBig(props){
             </div>
             <div className="Contents">
               <h3>{story.title}</h3>
-              <p>by {story.author.name}</p>
+              <div className='innerGrid'>
+                <p>by {story.author.name}</p>
+                <div className={`flair ${story.category}`}>{story.category}</div>
+              </div>
+              
             </div>
           </a>
         </Link>
@@ -45,11 +49,41 @@ export default function StoryCardBig(props){
         .SimpleCard:hover,
         .SimpleCard:focus,
         .SimpleCard:active {
-          color: ${COLORS.primary};
-          border-color: ${COLORS.primary};
+          color: ${COLORS.cardHalo};
+          border-color: ${COLORS.cardHalo};
+        }
+
+        .innerGrid{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 1rem;
+        }
+
+        .flair {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2px 6px;
+          border-radius: 16px;
+        }
+
+        .Tech {
+          color: ${COLORS.sWhite};
+          background-color: ${COLORS.techFlairBg};
+        }
+
+        .Entertainment {
+          color: ${COLORS.sWhite};
+          background-color: ${COLORS.entFlairBg};
         }
 
         h3 {
+          margin-bottom: 0px;
+        }
+
+        p {
+          margin-top: 0px;
           margin-bottom: 0px;
         }
 
