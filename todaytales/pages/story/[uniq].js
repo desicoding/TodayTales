@@ -93,7 +93,7 @@ export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.uniq, preview)
   //console.log("Storypage data",data)
   const content = await markdownToHtml(data?.post?.content || '')
-  //console.log("Storypage content",content)
+  console.log("Storypage content",content)
 
   return {
     props: {
