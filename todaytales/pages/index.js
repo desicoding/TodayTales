@@ -12,7 +12,7 @@ export default function Home(props) {
       <Head>
         <title>TalesToday</title>
         <meta name="description" content="Tales Today is the place to be for all the entertainment gossip and fun stories" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </Head>
       <Header/>
 

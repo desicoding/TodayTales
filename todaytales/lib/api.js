@@ -104,9 +104,6 @@ export async function getPostAndMorePosts(slug, preview) {
       slug
       content
       date
-      ogImage: coverImage{
-        url(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 })
-      }
       coverImage {
         responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
           ...responsiveImageFragment
@@ -114,9 +111,6 @@ export async function getPostAndMorePosts(slug, preview) {
       }
       author {
         name
-        picture {
-          url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
-        }
       }
     }
 
@@ -132,9 +126,6 @@ export async function getPostAndMorePosts(slug, preview) {
       }
       author {
         name
-        picture {
-          url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
-        }
       }
     }
   }

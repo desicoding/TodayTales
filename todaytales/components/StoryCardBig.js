@@ -25,16 +25,15 @@ export default function StoryCardBig(props){
             </div>
             <div className="Contents">
               <h3>{story.title}</h3>
-              <p>by <strong>{story.author.name}</strong></p>
+              <p>by {story.author.name}</p>
             </div>
           </a>
         </Link>
       </div>
       <style jsx>{`
         .SimpleCard {
-          max-width: 660px;
+          max-width: 638px;
           margin: 16px;
-          padding: 10px;
           text-align: left;
           color: inherit;
           text-decoration: none;
@@ -47,7 +46,11 @@ export default function StoryCardBig(props){
         .SimpleCard:focus,
         .SimpleCard:active {
           color: ${COLORS.primary};
-          border-color: ${COLORS.sBlack};
+          border-color: ${COLORS.primary};
+        }
+
+        h3 {
+          margin-bottom: 0px;
         }
 
         a {

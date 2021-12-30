@@ -21,7 +21,7 @@ export default function StoryPage({ post, morePosts, preview }) {
       <Head>
         <title>Chacha</title>
         <meta name="description" content='Chacha' />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </Head>
       <Header/>
 
@@ -46,12 +46,10 @@ export default function StoryPage({ post, morePosts, preview }) {
             flex-direction: column;
             max-width: 660px;
             overflow: hidden;
+            padding: 16px;
           }
 
           .main {
-            min-height: 100vh;
-            padding: 2rem 0;
-            flex: 1;
             display: flex;
             flex-direction: row;
             justify-content: center;
