@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import Image from 'next/image'
 import Header from '../../components/Header'
 import StoryList from '../../components/StoryList'
@@ -23,6 +24,8 @@ export default function StoryPage({ post, morePosts, preview }) {
         <meta name="description" content={post?.title} />
         <link rel="icon" href="/logo.png" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-06NRFHRH9X"></Script>
+      <Script type="text/javascript" src="/googletag.js"></Script>
       <Header/>
 
       <main className='main'>

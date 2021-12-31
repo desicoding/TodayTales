@@ -1,9 +1,11 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import Header from '../components/Header'
 import StoryList from '../components/StoryList'
 import {COLORS} from '../utils/Constants'
 import { dummyTopStories } from '../utils/Stories'
 import { getAllPostsForHome } from '../lib/api'
+import React from 'react';
 
 export default function Home(props) {
   //console.log(props)
@@ -14,6 +16,8 @@ export default function Home(props) {
         <meta name="description" content="Tales Today is the place to be for all the entertainment gossip and fun stories" />
         <link rel="icon" href="/logo.png" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-06NRFHRH9X"></Script>
+      <Script type="text/javascript" src="/googletag.js"></Script>
       <Header/>
 
       <main className='main'>
