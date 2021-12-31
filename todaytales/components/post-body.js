@@ -6,7 +6,7 @@ export default function PostBody({ content }) {
   //console.log('embeddedContent',embeddedContent)
   const ImageResized = embeddedContent?.replace(/<img/g,'<img width="100%"')
   const amazonEmbed = ImageResized?.replace(/&#x26;/g,'&')
-  const hasInstagramEmbed = (amazonEmbed.match(/www.instagram.com\/embed.js/g) != null)
+  const hasInstagramEmbed = (amazonEmbed?.match(/www.instagram.com\/embed.js/g) != null)
   //console.log('hasInstagramEmbeded',hasInstagramEmbed)
 
   React.useEffect(() => {
