@@ -15,6 +15,7 @@ export default function Home(props) {
         <title>TalesToday</title>
         <meta name="description" content="Tales Today is the place to be for all the entertainment gossip and fun stories" />
         <link rel="icon" href="/logo.png" />
+        <link rel="canonical" href='https://talestoday.com'/>
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-06NRFHRH9X"></Script>
       <Script type="text/javascript" src="/googletag.js"></Script>
@@ -22,7 +23,7 @@ export default function Home(props) {
 
       <main className='main'>
         <StoryList stories={props} variant='big'/>
-        <StoryList stories={dummyTopStories} variant='small'/>
+        <StoryList stories={props} variant='small'/>
       </main>
 
       <footer className='footer'>

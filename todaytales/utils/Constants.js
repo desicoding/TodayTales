@@ -1,6 +1,6 @@
 export const BASE_URL = process.env.NEXT_PUBLIC_REACT_APP_BASE_URL
 
-var primary='#ffff00'//green  
+var primary='#ffff8d'//green  
 var primaryVariant='#ffff00'
 var secondary= '#311b92'//blue  1565c0
 var background= '#efefef'//light grey
@@ -24,7 +24,8 @@ export const COLORS = {
   cardHalo: secondary,
   //flairs
   techFlairBg: '#90a4ae',
-  entFlairBg: '#ff8a65',
+  decorFlairBg: '#2e7d32',
+  cuteFlairBg: 'pink',
   //tags
   tagBackgroundColor: background,//aliceblue
 }

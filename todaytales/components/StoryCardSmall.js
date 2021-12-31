@@ -4,12 +4,12 @@ import Link from 'next/link'
 import { COLORS } from '../utils/Constants'
 
 export default function StoryCardSmall(props){
-  //console.log(props)
+  // console.log(props)
 
   const [story] = React.useState(props.story)
 
   const [isTryingToLearn, setIsTryingToLearn]=React.useState(false)
-  const [studioPageLink,setStudioPageLink]=React.useState(`/`)
+  const [studioPageLink,setStudioPageLink]=React.useState(`/story/${story.slug}`)
 
   const tryingToLearn=()=>{
     setIsTryingToLearn(true)
@@ -21,8 +21,8 @@ export default function StoryCardSmall(props){
         <Link href={studioPageLink}>
           <a>
             <div className="Grid">
-              <div style={{overflow:"hidden"}}>
-                <Image alt={story.title} src={`/photos/${story.image_main}`} width='320px' height='240px'/>
+              <div className="smallImage">
+                <Image alt={story.title} src={story.coverImage.responsiveImage.src} width='320px' height='180px'/>
               </div>
               <div className="Contents">
                 <h3>{story.title}</h3>
@@ -34,13 +34,13 @@ export default function StoryCardSmall(props){
       <style jsx>{`
         .Grid{
           display: flex;
-          align-items: start;
+          align-items: center;
+          justify-content: center;
         }
 
         .SimpleCard {
-          max-width: 450px;
+          max-width: 400px;
           margin: 16px;
-          padding: 10px;
           text-align: left;
           text-decoration: none;
           border: 1px solid #eaeaea;
@@ -51,7 +51,7 @@ export default function StoryCardSmall(props){
         .SimpleCard:hover,
         .SimpleCard:focus,
         .SimpleCard:active {
-          color: ${COLORS.primary};
+          color: ${COLORS.secondary};
           border-color: ${COLORS.secondary};
         }
 
@@ -62,10 +62,30 @@ export default function StoryCardSmall(props){
 
         h3 {
           font-size: 1em;
+          margin: 0px;
+        }
+
+        .smallImage{
+          overflow: hidden;
+          flex: 40%;
         }
 
         .Contents {
-          padding: 0 1rem 1rem 1rem;
+          padding: 0 1rem;
+          flex: 60%;
+          overflow: hidden;
+        }
+
+        @media(max-width:800px){
+          .Grid{
+            flex-direction:column;
+          }
+          .SimpleCard {
+            max-width: 320px;
+          }
+          .Contents {
+            padding: 1rem;
+          }
         }
       `}</style>
     </div>

@@ -73,9 +73,14 @@ export default function StoryCardBig(props){
           background-color: ${COLORS.techFlairBg};
         }
 
-        .Entertainment {
+        .Decor {
           color: ${COLORS.sWhite};
-          background-color: ${COLORS.entFlairBg};
+          background-color: ${COLORS.decorFlairBg};
+        }
+
+        .Cute {
+          color: ${COLORS.sWhite};
+          background-color: ${COLORS.cuteFlairBg};
         }
 
         h3 {

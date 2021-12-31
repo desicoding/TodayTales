@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.smallImage > span {
+  display: block !important;
+}

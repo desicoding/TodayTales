@@ -103,6 +103,7 @@ export async function getPostAndMorePosts(slug, preview) {
     post(filter: {slug: {eq: $slug}}) {
       title
       category
+      excerpt
       slug
       content
       date
@@ -117,19 +118,14 @@ export async function getPostAndMorePosts(slug, preview) {
       }
     }
 
-    morePosts: allPosts(orderBy: date_DESC, first: 2, filter: {slug: {neq: $slug}}) {
+    morePosts: allPosts(orderBy: date_DESC, first: 5, filter: {slug: {neq: $slug}}) {
       title
       category
       slug
-      excerpt
-      date
       coverImage {
         responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
           ...responsiveImageFragment
         }
-      }
-      author {
-        name
       }
     }
   }

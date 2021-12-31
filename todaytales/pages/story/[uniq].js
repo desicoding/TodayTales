@@ -11,7 +11,7 @@ import { markdownToHtml } from '../../lib/markdownToHtml'
 
 export default function StoryPage({ post, morePosts, preview }) {
 
-  //console.log("story is",post)
+  // console.log("story is",post)
   
   const makeStory=()=>{
     return 'ok'
@@ -23,6 +23,7 @@ export default function StoryPage({ post, morePosts, preview }) {
         <title>{post?.title}</title>
         <meta name="description" content={post?.title} />
         <link rel="icon" href="/logo.png" />
+        <link rel="canonical" href={`https://talestoday.com/${post?.slug}`} />
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-06NRFHRH9X"></Script>
       <Script type="text/javascript" src="/googletag.js"></Script>
@@ -35,7 +36,7 @@ export default function StoryPage({ post, morePosts, preview }) {
           <PostBody content={post?.content} />
           <div></div>
         </div>
-        <StoryList stories={dummyTopStories} variant='small'/>
+        <StoryList stories={morePosts} variant='small'/>
       </main>
 
       <footer className='footer'>
@@ -94,7 +95,7 @@ export default function StoryPage({ post, morePosts, preview }) {
 export async function getStaticProps({ params, preview = false }) {
   //console.log("Storypage params",params)
   const data = await getPostAndMorePosts(params.uniq, preview)
-  //console.log("Storypage data",data)
+  // console.log("Storypage data",data)
   const content = await markdownToHtml(data?.post?.content || '')
   //console.log("Storypage content",content)
 
