@@ -4,27 +4,20 @@ import StoryCardSmall from '../components/StoryCardSmall';
 
 var render=1
 export default function StoryList(props){
-  // console.log("Studio List component renders:", render,props)
+  //console.log("Studio List component renders:", render,props)
   render++
 
   const getElements=()=>{
     var elements=[];
-    if(props.stories.allPosts && typeof(props.stories.allPosts.forEach)=='function' && props.variant==='big'){
+    if(props.stories && props.variant==='big' && props.stories.allPosts && typeof(props.stories.allPosts.forEach)=='function'){
       props.stories.allPosts.forEach((value,index)=>{
         elements.push(
           <StoryCardBig key={index} story={value}/>
         );
       })
     }
-    if(props.stories.allPosts && typeof(props.stories.allPosts.forEach)=='function' && props.variant==='small'){
+    if(props.stories && props.variant==='small' && props.stories.allPosts && typeof(props.stories.allPosts.forEach)=='function'){
       props.stories.allPosts.forEach((value,index)=>{
-        elements.push(
-          <StoryCardSmall key={index} story={value}/>
-        );
-      })
-    }
-    if(props.stories && typeof(props.stories.forEach)=='function' && props.variant==='small'){
-      props.stories.forEach((value,index)=>{
         elements.push(
           <StoryCardSmall key={index} story={value}/>
         );

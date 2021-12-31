@@ -11,7 +11,7 @@ import { markdownToHtml } from '../../lib/markdownToHtml'
 
 export default function StoryPage({ post, morePosts, preview }) {
 
-  // console.log("story is",post)
+  //console.log("story is",post,morePosts)
   
   const makeStory=()=>{
     return 'ok'
@@ -106,7 +106,9 @@ export async function getStaticProps({ params, preview = false }) {
         ...data?.post,
         content,
       },
-      morePosts: data?.morePosts ?? [],
+      morePosts: {
+        allPosts: data?.morePosts ?? [],
+      }
     },
   }
 }
