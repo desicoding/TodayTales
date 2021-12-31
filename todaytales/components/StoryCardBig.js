@@ -8,12 +8,7 @@ export default function StoryCardBig(props){
   //console.log("props of storycardbig",props)
   const [story] = React.useState(props.story)
 
-  const [isTryingToLearn, setIsTryingToLearn]=React.useState(false)
-  const [studioPageLink,setStudioPageLink]=React.useState(`/story/${story.slug}`)
-
-  const tryingToLearn=()=>{
-    setIsTryingToLearn(true)//`/photos/${story.image_main}`
-  }//<Image alt={story.title} src={props.story.coverImage.responsiveImage.src} width='640px' height='300px'/>
+  const [studioPageLink]=React.useState(`/story/${story.slug}`)
 
   return (
     <div>   

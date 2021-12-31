@@ -96,6 +96,87 @@ export async function getAllPostsForHome(preview) {
   return data?.allPosts
 }
 
+export async function getAllPostsForTech(preview) {
+  const data = await fetchAPI(
+    `
+    {
+      allPosts(filter: {category: {eq: "Tech" }} orderBy: date_DESC, first: 20) {
+        title
+        category
+        slug
+        date
+        coverImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
+            ...responsiveImageFragment
+          }
+        }
+        author {
+          name
+        }
+      }
+    }
+
+    ${responsiveImageFragment}
+  `,
+    { preview }
+  )
+  return data?.allPosts
+}
+
+export async function getAllPostsForHomeDecor(preview) {
+  const data = await fetchAPI(
+    `
+    {
+      allPosts(filter: {category: {eq: "Home Decor" }} orderBy: date_DESC, first: 20) {
+        title
+        category
+        slug
+        date
+        coverImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
+            ...responsiveImageFragment
+          }
+        }
+        author {
+          name
+        }
+      }
+    }
+
+    ${responsiveImageFragment}
+  `,
+    { preview }
+  )
+  return data?.allPosts
+}
+
+export async function getAllCutePosts(preview) {
+  const data = await fetchAPI(
+    `
+    {
+      allPosts(filter: {category: {eq: "Cute" }} orderBy: date_DESC, first: 20) {
+        title
+        category
+        slug
+        date
+        coverImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
+            ...responsiveImageFragment
+          }
+        }
+        author {
+          name
+        }
+      }
+    }
+
+    ${responsiveImageFragment}
+  `,
+    { preview }
+  )
+  return data?.allPosts
+}
+
 export async function getPostAndMorePosts(slug, preview) {
   const data = await fetchAPI(
     `

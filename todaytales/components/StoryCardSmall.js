@@ -8,12 +8,8 @@ export default function StoryCardSmall(props){
 
   const [story] = React.useState(props.story)
 
-  const [isTryingToLearn, setIsTryingToLearn]=React.useState(false)
-  const [studioPageLink,setStudioPageLink]=React.useState(`/story/${story.slug}`)
+  const [studioPageLink]=React.useState(`/story/${story.slug}`)
 
-  const tryingToLearn=()=>{
-    setIsTryingToLearn(true)
-  }
 
   return (
     <div>   

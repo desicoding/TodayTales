@@ -16,9 +16,12 @@ export default function Home(props) {
         <meta name="description" content="Tales Today is the place to be for all the entertainment gossip and fun stories" />
         <link rel="icon" href="/logo.png" />
         <link rel="canonical" href='https://talestoday.com'/>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060997364623360"
+        crossOrigin="anonymous"></script>
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-06NRFHRH9X"></Script>
       <Script type="text/javascript" src="/googletag.js"></Script>
+      
       <Header/>
 
       <main className='main'>

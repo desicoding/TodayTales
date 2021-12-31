@@ -12,11 +12,6 @@ import { markdownToHtml } from '../../lib/markdownToHtml'
 export default function StoryPage({ post, morePosts, preview }) {
 
   //console.log("story is",post,morePosts)
-  
-  const makeStory=()=>{
-    return 'ok'
-  }
-
   return (
     <div>
       <Head>
@@ -24,6 +19,8 @@ export default function StoryPage({ post, morePosts, preview }) {
         <meta name="description" content={post?.title} />
         <link rel="icon" href="/logo.png" />
         <link rel="canonical" href={`https://talestoday.com/${post?.slug}`} />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060997364623360"
+        crossOrigin="anonymous"></script>
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-06NRFHRH9X"></Script>
       <Script type="text/javascript" src="/googletag.js"></Script>

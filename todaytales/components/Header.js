@@ -31,11 +31,16 @@ export default function Header(){
         }}>
         <div className='grid'>
           <div className='innerGrid' style={{flex:'30%'}}>
-            <Image alt='Tales Today Banner Image' src={`/headingText2.png`} width="154" height="40"/>
+            <Link href='/' passHref>
+              <a style={{display:'flex',padding:0,margin:0}}>
+                <Image alt='Tales Today Banner Image' src={`/headingText2.png`} width="154" height="40"/>
+              </a>
+            </Link>
           </div>
           <div className='innerGrid' style={{flex:'40%'}}>
-            <div className='gridItem'><Link href='/'><a className={isSelected('/')?'selected':''}>Stories</a></Link></div>
-            <div className='gridItem'><Link href='/memes'><a className={isSelected('/memes')?'selected':''}>Memes</a></Link></div>
+            <div className='gridItem'><Link href='/tech'><a className={isSelected('/tech')?'selected':'unselected'}>Tech</a></Link></div>
+            <div className='gridItem'><Link href='/cute'><a className={isSelected('/cute')?'selected':'unselected'}>Cute</a></Link></div>
+            <div className='gridItem'><Link href='/home-decor'><a className={isSelected('/home-decor')?'selected':'unselected'}>Decor</a></Link></div>
           </div>
           <div style={{flex:'30%'}}>
           </div>
@@ -75,11 +80,18 @@ export default function Header(){
             background-color: ${COLORS.headerAccentColor}
           }
   
-          a:hover,
-          a:focus,
-          a:active {
+          .unselected:hover,
+          .unselected:focus,
+          .unselected:active {
             color: ${COLORS.headerColor};
             background-color: ${COLORS.headerAccentColor}
+          }
+
+          @media(max-width: 800px){
+            .gridItem {
+              margin: 2px;
+              padding: 2px;
+            }
           }
         `}</style>
     </div>
