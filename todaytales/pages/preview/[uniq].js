@@ -10,7 +10,7 @@ import { markdownToHtml } from '../../lib/markdownToHtml'
 
 export default function StoryPage({ post, morePosts, preview }) {
 
-  console.log("story is",post)
+  //console.log("story is",post)
   
   const makeStory=()=>{
     return 'ok'
@@ -90,11 +90,11 @@ export default function StoryPage({ post, morePosts, preview }) {
 
 export async function getServerSideProps({ params }) {
   var preview=false
-  console.log("PreviewPage params",params)
+  //console.log("PreviewPage params",params)
   const data = await getPostAndMorePosts(params.uniq, preview)
   //console.log("Storypage data",data)
   const content = await markdownToHtml(data?.post?.content || '')
-  console.log("Storypage content",content)
+  //console.log("Storypage content",content)
 
   return {
     props: {
