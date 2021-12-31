@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Script from 'next/script'
 import React from 'react';
 
@@ -7,15 +8,15 @@ export default function PostBody({ content }) {
   const ImageResized = embeddedContent?.replace(/<img/g,'<img width="100%"')
   const amazonEmbed = ImageResized?.replace(/&#x26;/g,'&')
   const hasInstagramEmbed = (amazonEmbed?.match(/www.instagram.com\/embed.js/g) != null)
-  //console.log('hasInstagramEmbeded',hasInstagramEmbed)
+  //console.log('hasInstagramEmbeded',hasInstagramEmbed,amazonEmbed)
 
   React.useEffect(() => {
     if(hasInstagramEmbed){
-      const instagramScript = document.createElement("script");
+      const instagramScript = document?.createElement("script");
       instagramScript.src = "//www.instagram.com/embed.js";
       instagramScript.async = true;
-      document.body.appendChild(instagramScript);
-      instagramScript.onload = window.instgrm.Embeds.process()
+      document?.body?.appendChild(instagramScript);
+      instagramScript.onload = window?.instgrm?.Embeds?.process()
     }
   }, [hasInstagramEmbed])
 
