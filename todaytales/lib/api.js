@@ -177,6 +177,33 @@ export async function getAllCutePosts(preview) {
   return data?.allPosts
 }
 
+export async function getAllPostsForRandom(preview) {
+  const data = await fetchAPI(
+    `
+    {
+      allPosts(filter: {category: {eq: "Random" }} orderBy: date_DESC, first: 20) {
+        title
+        category
+        slug
+        date
+        coverImage {
+          responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 640, h: 300 }) {
+            ...responsiveImageFragment
+          }
+        }
+        author {
+          name
+        }
+      }
+    }
+
+    ${responsiveImageFragment}
+  `,
+    { preview }
+  )
+  return data?.allPosts
+}
+
 export async function getPostAndMorePosts(slug, preview) {
   const data = await fetchAPI(
     `

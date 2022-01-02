@@ -73,7 +73,7 @@ export default function StoryCardBig(props){
           background-color: ${COLORS.decorFlairBg};
         }
 
-        .Cute {
+        .Random {
           color: ${COLORS.sWhite};
           background-color: ${COLORS.cuteFlairBg};
         }

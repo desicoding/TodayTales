@@ -8,7 +8,8 @@ export default function PostBody({ content }) {
   const ImageResized = embeddedContent?.replace(/<img/g,'<img width="100%"')
   const amazonEmbed = ImageResized?.replace(/&#x26;/g,'&')
   const hasInstagramEmbed = (amazonEmbed?.match(/www.instagram.com\/embed.js/g) != null)
-  //console.log('hasInstagramEmbeded',hasInstagramEmbed,amazonEmbed)
+  const hasTwitterEmbed = (amazonEmbed?.match(/platform.twitter.com\/widgets.js/g) != null)
+  console.log('hasTwitterEmbed',hasTwitterEmbed,amazonEmbed)
 
   React.useEffect(() => {
     if(hasInstagramEmbed){
@@ -18,7 +19,13 @@ export default function PostBody({ content }) {
       document?.body?.appendChild(instagramScript);
       instagramScript.onload = window?.instgrm?.Embeds?.process()
     }
-  }, [hasInstagramEmbed])
+    if(hasTwitterEmbed){
+      const twitterScript = document?.createElement("script");
+      twitterScript.src = "https://platform.twitter.com/widgets.js";
+      twitterScript.async = true;
+      document?.body?.appendChild(twitterScript);
+    }
+  }, [hasInstagramEmbed,hasTwitterEmbed])
 
 
   return (

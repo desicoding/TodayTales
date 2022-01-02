@@ -39,7 +39,7 @@ export default function Header(){
           </div>
           <div className='innerGrid' style={{flex:'40%'}}>
             <div className='gridItem'><Link href='/tech'><a className={isSelected('/tech')?'selected':'unselected'}>Tech</a></Link></div>
-            <div className='gridItem'><Link href='/cute'><a className={isSelected('/cute')?'selected':'unselected'}>Cute</a></Link></div>
+            <div className='gridItem'><Link href='/random'><a className={isSelected('/random')?'selected':'unselected'}>Random</a></Link></div>
             <div className='gridItem'><Link href='/home-decor'><a className={isSelected('/home-decor')?'selected':'unselected'}>Decor</a></Link></div>
           </div>
           <div style={{flex:'30%'}}>

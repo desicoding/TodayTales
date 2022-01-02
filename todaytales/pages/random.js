@@ -3,7 +3,7 @@ import Script from 'next/script'
 import Header from '../components/Header'
 import StoryList from '../components/StoryList'
 import {COLORS} from '../utils/Constants'
-import { getAllCutePosts } from '../lib/api'
+import { getAllPostsForRandom } from '../lib/api'
 import React from 'react';
 
 export default function Tech(props) {
@@ -76,7 +76,7 @@ export default function Tech(props) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = (await getAllCutePosts(preview)) || []
+  const allPosts = (await getAllPostsForRandom(preview)) || []
   return {
     props: { allPosts },
   }
