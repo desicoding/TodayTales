@@ -5,7 +5,7 @@ import StoryList from '../components/StoryList'
 import {COLORS} from '../utils/Constants'
 import { dummyTopStories } from '../utils/Stories'
 import { getAllPostsForHome } from '../lib/api'
-import React from 'react';
+import React from 'react'
 
 export default function Home(props) {
   //console.log(props)
