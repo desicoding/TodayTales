@@ -16,7 +16,8 @@ export default function StoryPage({ post, morePosts, preview }) {
     <div>
       <Head>
         <title>{post?.title}</title>
-        <meta name="description" content={post?.title} />
+        <meta name="description" content={post?.excerpt} />
+        <meta name="keywords" content={post?.tags} />
         <link rel="icon" href="/logo.png" />
         <link rel="canonical" href={`https://talestoday.com/${post?.slug}`} />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060997364623360"

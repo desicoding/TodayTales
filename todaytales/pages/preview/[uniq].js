@@ -20,7 +20,8 @@ export default function StoryPage({ post, morePosts, preview }) {
     <div>
       <Head>
         <title>{post?.title}</title>
-        <meta name="description" content={post?.title} />
+        <meta name="description" content={post?.excerpt} />
+        <meta name="keywords" content={post?.tags} />
         <link rel="icon" href="/logo.png" />
       </Head>
       <Header/>

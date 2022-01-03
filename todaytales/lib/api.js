@@ -72,7 +72,7 @@ export async function getAllPostsForHome(preview) {
   const data = await fetchAPI(
     `
     {
-      allPosts(orderBy: date_DESC, first: 20) {
+      allPosts(orderBy: date_DESC, first: 100) {
         title
         category
         slug
@@ -100,7 +100,7 @@ export async function getAllPostsForTech(preview) {
   const data = await fetchAPI(
     `
     {
-      allPosts(filter: {category: {eq: "Tech" }} orderBy: date_DESC, first: 20) {
+      allPosts(filter: {category: {eq: "Tech" }} orderBy: date_DESC, first: 100) {
         title
         category
         slug
@@ -127,7 +127,7 @@ export async function getAllPostsForHomeDecor(preview) {
   const data = await fetchAPI(
     `
     {
-      allPosts(filter: {category: {eq: "Home Decor" }} orderBy: date_DESC, first: 20) {
+      allPosts(filter: {category: {eq: "Home Decor" }} orderBy: date_DESC, first: 100) {
         title
         category
         slug
@@ -154,7 +154,7 @@ export async function getAllCutePosts(preview) {
   const data = await fetchAPI(
     `
     {
-      allPosts(filter: {category: {eq: "Cute" }} orderBy: date_DESC, first: 20) {
+      allPosts(filter: {category: {eq: "Cute" }} orderBy: date_DESC, first: 100) {
         title
         category
         slug
@@ -181,7 +181,7 @@ export async function getAllPostsForRandom(preview) {
   const data = await fetchAPI(
     `
     {
-      allPosts(filter: {category: {eq: "Random" }} orderBy: date_DESC, first: 20) {
+      allPosts(filter: {category: {eq: "Random" }} orderBy: date_DESC, first: 100) {
         title
         category
         slug

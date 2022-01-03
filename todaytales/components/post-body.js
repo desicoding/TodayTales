@@ -9,7 +9,7 @@ export default function PostBody({ content }) {
   const amazonEmbed = ImageResized?.replace(/&#x26;/g,'&')
   const hasInstagramEmbed = (amazonEmbed?.match(/www.instagram.com\/embed.js/g) != null)
   const hasTwitterEmbed = (amazonEmbed?.match(/platform.twitter.com\/widgets.js/g) != null)
-  console.log('hasTwitterEmbed',hasTwitterEmbed,amazonEmbed)
+  //console.log('hasTwitterEmbed',hasTwitterEmbed,amazonEmbed)
 
   React.useEffect(() => {
     if(hasInstagramEmbed){
