@@ -72,7 +72,7 @@ export default function StoryCardSmall(props){
           overflow: hidden;
         }
 
-        @media(max-width:800px){
+        @media(max-width:600px){
           .Grid{
             flex-direction:column;
           }

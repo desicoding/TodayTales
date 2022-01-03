@@ -32,7 +32,10 @@ export default function StoryPage({ post, morePosts, preview }) {
           <Image alt={post?.title} src={post?.coverImage.responsiveImage.src} width='640px' height='300px'/>
             <h1>{post?.title}</h1>
           <PostBody content={post?.content} />
-          <div></div>
+          <div className="notInMobile">
+            <h3>Keep Reading:</h3><br/>
+            <StoryList stories={morePosts} variant='small'/>
+          </div>
         </div>
         <StoryList stories={morePosts} variant='small'/>
       </main>
@@ -82,6 +85,10 @@ export default function StoryPage({ post, morePosts, preview }) {
             .grid {
               width: 100%;
               flex-direction: column;
+            }
+
+            .notInMobile {
+              display: none;
             }
           }
         `}
