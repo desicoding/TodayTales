@@ -18,7 +18,7 @@ export default async function handler(req, res) {
   var xmlBodySlugs=``
   allSlugs.forEach((url)=>{
     //console.log(url.slug)
-    xmlBodySlugs+=`\n\t<url>\n\t\t<loc>\n\t\t\thttps://talestoday.com/`+url.slug+`\n\t\t</loc>\n\t</url>`
+    xmlBodySlugs+=`\n\t<url>\n\t\t<loc>\n\t\t\thttps://talestoday.com/story/`+url.slug+`\n\t\t</loc>\n\t</url>`
   })
 
 
