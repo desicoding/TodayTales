@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
   var xmlHead=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`
 
-  var bodyConstantURL=['','/tech','/random','/home-decor']
+  var bodyConstantURL=['/','/tech','/random','/home-decor']
 
   var xmlTail=`\n</urlset>`
 

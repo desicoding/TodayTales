@@ -14,7 +14,7 @@ export default function Tech(props) {
         <title>TalesToday</title>
         <meta name="description" content="Tales Today is the place to be for all the entertainment gossip and fun stories" />
         <link rel="icon" href="/logo.png" />
-        <link rel="canonical" href='https://talestoday.com'/>
+        <link rel="canonical" href='https://talestoday.com/random'/>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060997364623360"
         crossOrigin="anonymous"></script>
       </Head>
