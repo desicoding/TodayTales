@@ -19,7 +19,7 @@ export default function StoryPage({ post, morePosts, preview }) {
         <meta name="description" content={post?.excerpt} />
         <meta name="keywords" content={post?.tags} />
         <link rel="icon" href="/logo.png" />
-        <link rel="canonical" href={`https://talestoday.com/${post?.slug}`} />
+        <link rel="canonical" href={`https://talestoday.com/story/${post?.slug}`} />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060997364623360"
         crossOrigin="anonymous"></script>
       </Head>
