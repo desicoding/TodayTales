@@ -15,11 +15,20 @@ export default function Tech(props) {
         <meta name="description" content="Tales Today is the place to be for all the entertainment gossip and fun stories" />
         <link rel="icon" href="/logo.png" />
         <link rel="canonical" href='https://talestoday.com/tech'/>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060997364623360"
-        crossOrigin="anonymous"></script>
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-06NRFHRH9X"></Script>
       <Script type="text/javascript" src="/googletag.js"></Script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6060997364623360"
+      crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-6060997364623360"
+          data-ad-slot="9183255294"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
       
       <Header/>
 
