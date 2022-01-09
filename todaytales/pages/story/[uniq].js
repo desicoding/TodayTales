@@ -11,7 +11,7 @@ import { markdownToHtml } from '../../lib/markdownToHtml'
 
 export default function StoryPage({ post, morePosts, preview }) {
 
-  //console.log("story is",post,morePosts)
+  console.log("story is",post?.slug)
   return (
     <div>
       <Head>
